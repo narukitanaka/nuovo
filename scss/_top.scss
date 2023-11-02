@@ -1,0 +1,434 @@
+@use "variable"as v;
+@use "common"as c;
+/*************************************************
+top
+*************************************************/
+.video-cover {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 10;
+  mix-blend-mode: screen;
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom;
+  }
+  #screen {
+    mix-blend-mode: screen;
+  }
+}
+.p-top_mv {
+  position: relative;
+  width: 100vw;
+  img {
+    width: 100%;
+  }
+  .inner {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 2.8rem;
+    left: 50%;
+    transform: translateX(-50%);
+    .mv-btn {
+      position: relative;
+      display: grid;
+      place-content: center;
+      width: 48rem;
+      height: 6rem;
+      border-radius: 10px;
+      background-color: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      @include c.mq(md) {
+        width: 34vw;
+      }
+      &:first-of-type {
+        &::before {
+          background: url(https://cdn.shopify.com/s/files/1/0840/1993/7556/files/arrow02.svg) no-repeat top /contain;
+        }
+      }
+      &:last-of-type {
+        background-color: rgba(255, 255, 255, 0.5);
+        &::before {
+          background: url(https://cdn.shopify.com/s/files/1/0840/1993/7556/files/arrow01.svg) no-repeat top /contain;
+        }
+      }
+      &::before {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 2rem;
+        content: "";
+        width: 1.2rem;
+        height: 1.5rem;
+      }
+      .btn, .btn02 {
+        width: 47rem;
+        font-weight: 600;
+        letter-spacing: 3px;
+        @include c.mq(md) {
+          width: 100%;
+        }
+      }
+      .btn02 {
+        color: #5D2813;
+      }
+    }
+  }
+  .mv-btn_sp01, .mv-btn_sp02 {
+    position: absolute;
+    left: 5%;
+    p {
+      font-size: 2.6rem;
+      font-weight: 600;
+      line-height: 1.5;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+    }
+    a {
+      position: relative;
+      width: 20rem;
+      height: 3.2rem;
+      font-size: 1.2rem;
+      font-weight: 500;
+      &::before {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 1rem;
+        content: "";
+        width: .6rem;
+        height: .7rem;
+      }
+    }
+  }
+  .mv-btn_sp01 {
+    top: 18vw;
+    p {
+      color: v.$main-txt02;
+    }
+    a {
+      color: v.$main-txt02;
+      &::before {
+        background: url(https://cdn.shopify.com/s/files/1/0840/1993/7556/files/arrow02.svg) no-repeat top /contain;
+      }
+    }
+  }
+  .mv-btn_sp02 {
+    top: 103vw;
+    p {
+      color: v.$main-txt03;
+    }
+    a {
+      color: v.$main-txt03;
+      &::before {
+        background: url(https://cdn.shopify.com/s/files/1/0840/1993/7556/files/arrow01.svg) no-repeat top /contain;
+      }
+    }
+  }
+}
+
+.p-top_wrap01 {
+  background: url(https://cdn.shopify.com/s/files/1/0840/1993/7556/files/p-top_about-bg.png) no-repeat bottom /contain;
+  background-color: v.$bg-color;
+  padding: 10.6rem 0 68.8rem;
+  @include c.mq() {
+    padding: 8.3rem 0 35.6rem;
+    background: url(https://cdn.shopify.com/s/files/1/0840/1993/7556/files/p-top_about-bg_sp.png) no-repeat bottom /contain;
+    background-color: v.$bg-color;
+  }
+  h2 {
+    width: 2.35rem;
+    margin: 0 auto 3.3rem;
+    img {
+      width: 100%;
+    }
+  }
+  p {
+    width: 71.4rem;
+    color: #fff;
+    line-height: 2;
+    margin: 0 auto 4.5rem;
+    @include c.mq() {
+      width: 100%;
+    }
+  }
+}
+
+.p-top_wrap02 {
+  padding: 10.6rem 0 14.6rem;
+  @include c.mq() {
+    padding: 5.7rem 0 5rem;
+  }
+  h2 {
+    text-align: center;
+    color: v.$main-txt;
+    margin-bottom: 1rem;
+    @include c.mq() {
+      font-size: 2.1rem;
+    }
+  }
+  .sub-ttl{
+    text-align: center;
+    margin-bottom: 6.1rem;
+    color: v.$main-txt;
+    @include c.mq() {
+      margin-bottom: 5.2rem;
+    }
+  }
+  .box {
+    width: 100%;
+    margin-bottom: 3rem;
+    @include c.mq() {
+      margin-bottom: 2rem;
+    }
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.p-top_wrap03 {
+  background-color: v.$bg-color;
+  padding: 10rem 0;
+  @include c.mq() {
+    padding: 5rem 0;
+  }
+  h2 {
+    text-align: center;
+    color: v.$main-txt02;
+    margin-bottom: 1rem;
+    @include c.mq() {
+      font-size: 2.1rem;
+    }
+  }
+  .sub-ttl{
+    text-align: center;
+    margin-bottom: 5rem;
+    color: v.$main-txt02;
+  }
+  .ranking-area {
+    display: flex;
+    gap: 6.7rem;
+    @include c.mq() {
+      flex-wrap: wrap;
+      column-gap: 2.5rem;
+      row-gap: 3rem;
+    }
+    .box {
+      width: calc((100% / 4) - (20.1rem / 4));
+      @include c.mq() {
+        width: calc((100% / 2) - (2.5rem / 2));
+      }
+      &:first-of-type {
+        .img-box {
+          &::before {
+            background-image: url(https://cdn.shopify.com/s/files/1/0840/1993/7556/files/icon-ranking01.png);
+          }
+        }
+      }
+      &:nth-of-type(2) {
+        .img-box {
+          &::before {
+            background-image: url(https://cdn.shopify.com/s/files/1/0840/1993/7556/files/icon-ranking02.png);
+          }
+        }
+      }
+      &:nth-of-type(3) {
+        .img-box {
+          &::before {
+            background-image: url(https://cdn.shopify.com/s/files/1/0840/1993/7556/files/icon-ranking03.png);
+          }
+        }
+      }
+      &:last-of-type {
+        .img-box {
+          &::before {
+            background-image: url(https://cdn.shopify.com/s/files/1/0840/1993/7556/files/icon-ranking04.png);
+          }
+        }
+      }
+      .img-box {
+        position: relative;
+        width: 100%;
+        margin-bottom: 1.2rem;
+        &::before {
+          position: absolute;
+          top: -.9rem;
+          left: 1.2rem;
+          content: "";
+          width: 4rem;
+          height: 4.4rem;
+          background-repeat: no-repeat;
+          background-position: top;
+          background-size: contain;
+          filter: drop-shadow(3px 3px 6px rgba(#000 , .2));
+          @include c.mq() {
+            top: -.6rem;
+            left: 0;
+            width: 3rem;
+            height: 33.5rem;
+          }
+        }
+      }
+      .ttl, .price {
+        color: #fff;
+        font-size: 1.6rem;
+        @include c.mq() {
+          font-size: 1.4rem;
+        }
+      }
+      .price {
+        span {
+          font-size: 1.3rem;
+          @include c.mq() {
+            font-size: 1.1rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.p-top_wrap04 {
+  padding: 10rem 0;
+  @include c.mq() {
+    padding: 5rem 0;
+  }
+  h2 {
+    text-align: center;
+    color: v.$main-txt;
+    margin-bottom: 1rem;
+    @include c.mq() {
+      font-size: 2.1rem;
+    }
+  }
+  .sub-ttl{
+    text-align: center;
+    margin-bottom: 7rem;
+    color: v.$main-txt;
+    @include c.mq() {
+      margin-bottom: 5rem;
+    }
+  }
+  .lineup-area {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 7rem;
+    column-gap: 4.5rem;
+    margin-bottom: 7rem;
+    @include c.mq() {
+      row-gap: 3rem;
+      column-gap: 2.5rem;
+      margin-bottom: 5rem;
+    }
+    .box {
+      width: calc((100% / 3) - (9rem / 3));
+      @include c.mq() {
+        width: calc((100% / 2) - (2.5rem / 2));
+      }
+      .img-box {
+        margin-bottom: 1.6rem;
+        @include c.mq() {
+          margin-bottom: .5rem;
+        }
+      }
+      p {
+        font-size: 2rem;
+        text-align: center;
+        color: v.$main-txt03;
+        @include c.mq() {
+          font-size: 1.6rem;
+        }
+      }
+    }
+  }
+}
+
+.p-top_wrap05 {
+  padding: 5.7rem 0 59.7rem;
+  background: url(https://cdn.shopify.com/s/files/1/0840/1993/7556/files/p-top_faq-bg.png) no-repeat bottom /cover;
+  background-color: v.$bg-color;
+  @include c.mq() {
+    padding: 5rem 0 22.2rem;
+    background: url(https://cdn.shopify.com/s/files/1/0840/1993/7556/files/p-top_faq-bg_sp.png) no-repeat bottom /contain;
+    background-color: v.$bg-color;
+  }
+  h2 {
+    text-align: center;
+    color: v.$main-txt02;
+    margin-bottom: 1rem;
+    @include c.mq() {
+      font-size: 2.1rem;
+    }
+  }
+  .sub-ttl{
+    text-align: center;
+    margin-bottom: 7rem;
+    color: v.$main-txt02;
+    @include c.mq() {
+      margin-bottom: 3.2rem;
+    }
+  }
+  .faq-area {
+    display: flex;
+    @include c.mq() {
+      display: block;
+    }
+    .box {
+      width: calc(100% / 3);
+      text-align: center;
+      @include c.mq() {
+        width: 100%;
+      }
+      &:nth-of-type(2) {
+        border-left: 1px solid #fff;
+        border-right: 1px solid #fff;
+        @include c.mq() {
+          border-top: 1px solid #fff;
+          border-bottom: 1px solid #fff;
+          border-left: none;
+          border-right: none;
+        }
+      }
+      a {
+        @include c.mq() {
+          display: flex;
+          align-items: center;
+        }
+      }
+      img {
+        display: block;
+        margin: 2.1rem auto 2.2rem;
+        @include c.mq() {
+          width: 5rem;
+          margin: 1.5rem 2rem 1.5rem 3.3rem;
+        }
+      }
+      p {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        color: #fff;
+        margin-bottom: 2.1rem;
+        @include c.mq() {
+          gap: .9rem;
+          margin-bottom: 0;
+        }
+        img {
+          margin: 0;
+          @include c.mq() {
+            width: .9rem;
+          }
+        }
+      }
+    }
+  }
+}

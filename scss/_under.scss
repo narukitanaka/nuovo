@@ -1,0 +1,1285 @@
+@use "variable"as v;
+@use "common"as c;
+/*************************************************
+  下層ページ
+*************************************************/
+.p-under_mv {
+  background-attachment: fixed;
+  padding: 18.6rem 0 22.4rem;
+  @include c.mq() {
+    background-attachment: scroll;
+    padding: 23.4rem 0 20.8rem;
+  }
+  h1 {
+    font-size: 4rem;
+    letter-spacing: 6px;
+    color: v.$main-txt02;
+    margin-bottom: 1.1rem;
+    @include c.mq() {
+      font-size: 2.8rem;
+      font-weight: 600;
+    }
+  }
+  .sub-ttl {
+    letter-spacing: 3px;
+    color: v.$main-txt02;
+    @include c.mq() {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+  }
+}
+
+.p-contact_mv,
+.p-faq_mv,
+.p-company_mv,
+.p-privacy_mv,
+.p-terms_mv {
+  background-image: url(https://cdn.shopify.com/s/files/1/0840/1993/7556/files/p-under_mv01.jpg);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  @include c.mq() {
+    background-position: 20%;
+  }
+}
+
+// ページネーション
+.p-pager {
+  .p-gager__list {
+    display: flex;
+    justify-content: center;
+    .p-pager__item {
+      margin: 0 5px;
+      font-family: 'Shippori Mincho', serif;
+      font-weight: 600;
+      @include c.mq(sm) {
+        margin: 0;
+      }
+    }
+  }
+}
+.p-pager__link {
+	width: 3.5rem;
+	height: 3.5rem;
+	font-size: 1.6rem;
+	display: grid;
+	place-content: center;
+  color: #fff;
+}
+.p-pager__link--current {
+	color: v.$main-txt02;
+  text-decoration: underline;
+}
+
+/*************************************************
+  NUOVOについて
+*************************************************/
+.p-about_mv {
+  background-image: url(https://cdn.shopify.com/s/files/1/0840/1993/7556/files/p-about_mv.jpg);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  @include c.mq(md) {
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    z-index: 2;
+  }
+  &::before {
+    @include c.mq(md) {
+      position: fixed;
+      top: 0;
+      left: 0;
+      content: "";
+      width: 100vw;
+      height: 100vh;
+      background: url(https://cdn.shopify.com/s/files/1/0840/1993/7556/files/p-about_mv.jpg) no-repeat top /cover;
+      z-index: 1;
+    }
+    @include c.mq() {
+      background: url(https://cdn.shopify.com/s/files/1/0840/1993/7556/files/p-about_mv_sp.jpg) no-repeat top /contain;
+    }
+  }
+  h1 {
+    @include c.mq() {
+      font-size: 2.8rem;
+      line-height: 1.5;
+    }
+  }
+  .inner {
+    @include c.mq(md) {
+      z-index: 3;
+    }
+  }
+}
+.p-about_wrap01 {
+  background-color: v.$bg-color;
+  padding: 13.4rem 0;
+  @include c.mq() {
+    padding: 7.5rem 0 6rem;
+  }
+  .sp-cavity_area {
+    @include c.mq() {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      margin-bottom: 3.6rem;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+      z-index: 2;
+    }
+    &::before {
+      @include c.mq() {
+        position: fixed;
+        top: 0;
+        left: 0;
+        content: "";
+        width: 100vw;
+        height: 100vh;
+        background: url(https://cdn.shopify.com/s/files/1/0840/1993/7556/files/p-about_mv_sp.jpg) no-repeat top /contain;
+        z-index: 1;
+      }
+    }
+  }
+  h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 3.7rem;
+    color: v.$main-txt02;
+    @include c.mq() {
+      font-size: 1.8rem;
+      text-align: left;
+      margin-bottom: 3rem;
+    }
+  }
+  p {
+    width: 90%;
+    max-width: 106rem;
+    margin: 0 auto 12rem;
+    color: #fff;
+    line-height: 2;
+    @include c.mq() {
+      width: 100%;
+      font-size: 1.3rem;
+      margin-bottom: 5.5rem;
+    }
+  }
+  .about-imgarea {
+    display: flex;
+    justify-content: space-between;
+    @include c.mq() {
+      display: block;
+    }
+    .left {
+      padding-top: 5.5rem;
+      @include c.mq() {
+        padding-top: 0;
+      }
+      .img-box {
+        height: 24.1rem;
+        @include c.mq() {
+          height: 12.3rem;
+        }
+        &:first-of-type {
+          width: 40rem;
+          margin-bottom: 5.3rem;
+          @include c.mq(md) {
+            width: 35rem;
+          }
+          @include c.mq() {
+            width: 22.5rem;
+            margin-bottom: 2.3rem;
+          }
+        }
+        &:nth-of-type(2) {
+          width: 53.1rem;
+          padding-left: 13.1rem;
+          @include c.mq(md) {
+            width: 34.1rem;
+            padding-left: 5.1rem;
+          }
+          @include c.mq() {
+            width: 22.5rem;
+            padding-left: 0;
+            margin: 0 0 0 auto;
+          }
+        }
+      }
+    }
+    .right {
+      width: 60rem;
+      height: 69.8rem;
+      background-image: url(https://cdn.shopify.com/s/files/1/0840/1993/7556/files/p-about_mv.jpg);
+      background-repeat: no-repeat;
+      background-position: top;
+      background-size: cover;
+      background-attachment: fixed;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+      @include c.mq(md) {
+        position: relative;
+        width: 40rem;
+        height: 50rem;
+        background: none;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        z-index: 2;
+      }
+      &::before {
+        @include c.mq(md) {
+          position: fixed;
+          top: 0;
+          left: 0;
+          content: "";
+          width: 100vw;
+          height: 100vh;
+          background: url(https://cdn.shopify.com/s/files/1/0840/1993/7556/files/p-about_mv.jpg) no-repeat top /cover;
+          z-index: 1;
+        }
+      }
+    }
+  }
+}
+.p-about_wrap02 {
+  padding: 7.5rem 0 16.7rem;
+  background: url(https://cdn.shopify.com/s/files/1/0840/1993/7556/files/p-about_bg-img01.jpg) no-repeat center /cover;
+  @include c.mq() {
+    padding: 8rem 0 9rem;
+    background: url(https://cdn.shopify.com/s/files/1/0840/1993/7556/files/p-about_bg-img01_sp.jpg) no-repeat center /cover;
+  }
+  .inner {
+    display: flex;
+    gap: 4rem;
+    @include c.mq() {
+      gap: 2.7rem;
+    }
+  }
+  h2 {
+    width: 3.6rem;
+    @include c.mq() {
+      width: 3.2rem;
+    }
+    img {
+      width: 100%;
+    }
+  }
+  p {
+    width: 50rem;
+    line-height: 2.2;
+    color: #fff;
+    @include c.mq() {
+      width: calc(100% - 5.9rem);
+    }
+  }
+}
+.p-about_wrap03 {
+  padding: 10.8rem 0 8.9rem;
+  background: url(https://cdn.shopify.com/s/files/1/0840/1993/7556/files/p-about_bg-img02.jpg) no-repeat center /cover;
+  @include c.mq() {
+    padding: 5.7rem 0;
+    background: url(https://cdn.shopify.com/s/files/1/0840/1993/7556/files/p-about_bg-img02_sp.jpg) no-repeat center /cover;
+  }
+  .inner {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: end;
+    align-items: end;
+    gap: 5.6rem;
+    @include c.mq() {
+      gap: 3.2rem;
+      align-items: flex-start;
+    }
+  }
+  h2 {
+    width: 3.6rem;
+    @include c.mq() {
+      width: 2.6rem;
+    }
+    img {
+      width: 100%;
+    }
+  }
+  p {
+    width: 50rem;
+    line-height: 2.2;
+    color: #fff;
+    @include c.mq() {
+      padding-top: 18rem;
+      width: calc(100% - 5.9rem);
+    }
+  }
+}
+.p-about_wrap04 {
+  .wrap04-top {
+    padding: 21.9rem 0 4.5rem;
+    background-color: v.$bg-color;
+    @include c.mq() {
+      padding: 12rem 0 19rem;
+    }
+    .sub-ttl {
+      margin-bottom: 2.5rem;
+      color: v.$main-txt02;
+    }
+    h2 {
+      font-size: 2rem;
+      line-height: 2.2;
+      color: v.$main-txt02;
+      margin-bottom: 4.1rem;
+      @include c.mq() {
+        font-size: 1.8rem;
+        line-height: 2;
+        letter-spacing: 3px;
+        margin-bottom: 3rem;
+      }
+    }
+    .txt {
+      width: 60rem;
+      margin-bottom: 3.3rem;
+      color: #fff;
+      @include c.mq(md) {
+        width: 40rem;
+      }
+      @include c.mq() {
+        width: 100%;
+      }
+    }
+    .name {
+      font-size: 1.4rem;
+      color: #fff;
+      span {
+        padding-left: 1.6rem;
+        font-size: 1.6rem;
+      }
+    }
+  }
+  .wrap04-bottom {
+    padding: 5.9rem 0 10rem;
+    @include c.mq() {
+      padding: 13.5rem 0 5rem;
+      position: relative;
+    }
+    .sp-box {
+      @include c.mq() {
+        position: absolute;
+        top: -14.2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+      }
+    }
+    .ownner_img-area {
+      position: relative;
+      display: flex;
+      gap: 5rem;
+      margin-bottom: 8rem;
+      @include c.mq() {
+        gap: 2.5rem;
+      }
+      .first-box {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 54rem !important;
+        height: 84rem !important;
+        @include c.mq(md) {
+          bottom: 460px;
+          width: 38rem !important;
+          height: 50rem !important;
+        }
+      }
+      .img-box {
+        width: 17rem;
+        height: 37rem;
+        @include c.mq() {
+          width: calc((100% / 3) - (5rem / 3));
+          height: 20.4rem;
+        }
+      }
+    }
+    .btn02 {
+      width: 26rem;
+    }
+  }
+}
+
+/*************************************************
+  商品一覧
+*************************************************/
+.p-item-list_mv {
+  background-image: url(https://cdn.shopify.com/s/files/1/0840/1993/7556/files/p-item-list_mv.jpg);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  @include c.mq() {
+    background-position: 40%;
+    padding: 23.4rem 0 15.5rem;
+  }
+  .category-name {
+    font-size: 2.8rem;
+    letter-spacing: 4px;
+    color: v.$main-txt02;
+    margin-bottom: .5rem;
+  }
+}
+
+.p-item-list_wrap01 {
+  padding: 5.9rem 0 10rem;
+  background-color: v.$bg-color;
+  @include c.mq() {
+    padding: 4rem 0 10rem;
+  }
+}
+
+.sort-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid #fff;
+  @include c.mq() {
+    display: block;
+  }
+  p {
+    color: #fff;
+    @include c.mq() {
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+  .p-order-content {
+    ul {
+      display: flex;
+      @include c.mq() {
+        justify-content: space-between;
+      }
+      li {
+        border-left: 1px solid #fff;
+        border-right: 1px solid #fff;
+        @include c.mq() {
+          border-left: none;
+        }
+        &:first-of-type {
+          border-left: none;
+        }
+        &:last-of-type {
+          border-right: none;
+        }
+        a {
+          padding: 1rem;
+          color: #fff;
+          transition: all .5s;
+          opacity: .5;
+          @include c.mq() {
+            padding: 0 .4rem 0 0;
+            font-size: 1.2rem;
+          }
+          &:hover {
+            opacity: 1;
+          }
+        }
+        .order-active {
+          opacity: 1 !important;
+        }
+      }
+    }
+  }
+}
+
+.item-list {
+  padding: 5rem 0 5rem;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 5rem;
+  column-gap: 2.7rem;
+  @include c.mq() {
+    column-gap: 2rem;
+    row-gap: 3rem;
+  }
+  li {
+    width: calc((100% / 4) - (8.1rem / 4));
+    @include c.mq() {
+      width: calc((100% / 2) - 1rem);
+    }
+    .img-box {
+      width: 100%;
+      aspect-ratio: 14 / 9;
+      margin-bottom: 1.2rem;
+      background-color: #eee;
+      @include c.mq() {
+        aspect-ratio: 1 / 1;
+      }
+    }
+    p {
+      font-size: 1.6rem;
+      color: #fff;
+      margin-bottom: 1rem;
+      @include c.mq() {
+        font-size: 1.4rem;
+        margin-bottom: .3rem;
+      }
+      span {
+        font-size: 1.3rem;
+        @include c.mq() {
+          font-size: 1.2rem;
+        }
+      }
+    }
+    .price {
+      margin-bottom: 0;
+      
+    }
+  }
+}
+
+/*************************************************
+  商品一覧
+*************************************************/
+.p-item_wrap01 {
+  padding: 13.5rem 0 15rem;
+  background-color: v.$bg-color;
+  @include c.mq() {
+    padding: 8.5rem 0 10rem;
+  }
+}
+.p-merchandise-detail {
+	display: flex;
+  margin-top: 2rem;
+  @include c.mq(sm) {
+    display: block;
+    margin-top: 1rem;
+  }
+}
+// 画像
+.p-merchandise__img-content {
+	width: 57rem;
+	flex-shrink: 0;
+	margin-right: 6rem;
+  @include c.mq(md) {
+    width: 38rem;
+  }
+  @include c.mq(sm) {
+    width: 100%;
+  }
+}
+.p-merchandise__img-wrapper {
+  margin-bottom: 5rem;
+  @include c.mq(sm) {
+    margin-bottom: 3rem;
+  }
+  .swiper {
+    overflow: hidden;
+  }
+	.swiper-slide {
+		.p-img-wrapper {
+			height:  55rem;
+      @include c.mq(md) {
+        aspect-ratio: 315 / 328;
+        height: auto;
+      }
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+	}
+}
+
+// サムネイル
+.thumb-list {
+	display: flex;
+	margin-top: 2.8rem;
+	flex-wrap: wrap;
+  column-gap: 3rem;
+  row-gap: 1.5rem;
+  @include c.mq(sm) {
+    margin-top: 2rem;
+    column-gap: 1rem;
+  }
+}
+.thumb-item {
+	width: calc((100% / 4) - (9rem / 4));
+	aspect-ratio: 1/1;
+  @include c.mq(sm) {
+    width: calc((100% / 4) - (3rem / 4));
+  }
+}
+.thumb-link {
+	display: block;
+	width: 100%;
+	height: 100%;
+	// @include hover;
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+    object-position: center;
+	}
+}
+
+// テキスト
+.p-merchandise__detail-content {
+  width: 100%;
+	letter-spacing: normal;
+	// 商品カテゴリー
+	.c-category__list {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 5px -5px 0;
+	}
+	.c-category__item {
+		margin: 5px 5px 0;
+    font-size: 1.4rem;
+    color: #fff;
+	}
+	// 商品名
+	.c-merchandise__name {
+		margin-top: 1.7rem;
+		font-size: 2.5rem;
+    font-family: 'Shippori Mincho', serif;
+		font-weight: 500;
+    letter-spacing: 4px;
+    color: #fff;
+    @include c.mq(sm) {
+      font-size: 2rem;
+    }
+	}
+	// 価格
+	.c-price {
+		margin-top: 1.2rem;
+		font-size: 2rem;
+    color: #fff;
+	}
+  //メタフィールド
+	.p-merchandise__infomation {
+		margin: 4rem 0;
+		width: 100%;
+		font-size: 1.4rem;
+    @include c.mq(sm) {
+      margin-top: 3.5rem;
+      font-size: 1.3rem;
+    }
+		th {
+      width: 15%;
+			font-weight: 600;
+			text-align: left;
+      letter-spacing: 2px;
+      line-height: 1.5;
+      color: #fff;
+			padding: .5rem 0;
+			white-space: nowrap;
+      @include c.mq(sm) {
+        width: 24%;
+      }
+		}
+		td {
+			width: 100%;
+			padding: .5rem 0;
+      letter-spacing: 2px;
+      line-height: 1.5;
+      color: #fff;
+		}
+	}
+
+  //商品説明
+  .p-txt-block {
+    margin-bottom: 2rem;
+    @include c.mq(sm) {
+      margin-bottom: 7rem;
+    }
+    .p-block__ttl {
+      position: relative;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 1rem;
+      @include c.mq(sm) {
+        font-size: 1.6rem;
+      }
+      &::before {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+        content: "";
+        width: 80%;
+        height: 1px;
+        background-color: #707070;
+        @include c.mq() {
+          width: 70%;
+        }
+      }
+    }
+    .p-block__text {
+      font-size: 1.5rem;
+      letter-spacing: 3px;
+      line-height: 1.7;
+      color: #fff;
+    }
+  }
+
+	.p-btn-wrapper {
+		margin-top: 32px;
+    @include c.mq(sm) {
+      margin-top: 20px;
+    }
+	}
+	//数量
+	.p-count {
+		margin-top: 5rem;
+    @include c.mq(sm) {
+      margin-top: 2.5rem;
+    }
+	}
+	.p-select-wrapper {
+		font-size: 1.8rem;
+		width: 100%;
+		position: relative;
+		background-color: #fff;
+		margin-top: 1.4rem;
+		&::after {
+			pointer-events: none;
+			content: "";
+			position: absolute;
+			top: 50%;
+			right: 2rem;
+			width: 8px;
+			height: 8px;
+			border-right: 2px solid #333;
+			border-bottom: 2px solid #333;
+			transform: translateY(-50%) rotate(45deg);
+		}
+		select {
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+			background: transparent;
+			border: none;
+			border-radius: 0;
+			outline: none;
+			color: currentColor;
+			padding: 16px 30px;
+			cursor: pointer;
+		}
+		select,
+		option {
+			font: inherit;
+			width: 100%;
+		}
+	}
+  // カートボタン
+  .c-btn {
+    position: relative;
+    font: inherit;
+    font-size: 1.8rem;
+    background: rgb(255,220,177);
+    background: linear-gradient(80deg, rgba(255,220,177,1) 0%, rgba(220,183,37,1) 100%);
+    color: v.$bg-color;
+    min-height: 8.5rem;
+    display: grid;
+    place-content: center;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    width: 100%;
+    cursor: pointer;
+    transition: all .3s;
+    @include c.mq(sm) {
+      font-size: 1.5rem;
+      min-height: 7.2rem;
+    }
+    &::before {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 29%;
+      content: "";
+      width: 2.7rem;
+      height: 2.6rem;
+      background: url(https://cdn.shopify.com/s/files/1/0840/1993/7556/files/icon-cart.svg) no-repeat center /contain;
+      @include c.mq(sm) {
+        left: 23%;
+      }
+    }
+    &:hover {
+      opacity: .7;
+    }
+  }
+	// この商品について問い合わせる
+	.c-txt-inquiry {
+		display: inline-block;
+		color: currentColor;
+		text-decoration: underline;
+		font-size: 1.6rem;
+    color: #fff;
+		margin-top: 30px;
+		letter-spacing: 2px;
+    @include c.mq(sm) {
+      margin-top: 10px;
+    }
+	}
+}
+
+
+/*************************************************
+  よくあるご質問
+*************************************************/
+.p-faq_wrap01 {
+  background-color: v.$bg-color;
+  padding: 5rem 0 10rem;
+  @include c.mq() {
+    padding: 2.5rem 0 10rem;
+  }
+  .faq-area {
+    display: flex;
+    margin-bottom: 4.5rem;
+    @include c.mq() {
+      display: block;
+    }
+    .box {
+      width: calc(100% / 3);
+      text-align: center;
+      @include c.mq() {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+      &:nth-of-type(2) {
+        border-left: 1px solid #fff;
+        border-right: 1px solid #fff;
+        @include c.mq() {
+          border: none;
+        }
+      }
+      .icon-img {
+        width: 5rem;
+      }
+      img {
+        display: block;
+        margin: 2.1rem auto 2.2rem;
+        @include c.mq() {
+          margin: 2.1rem auto 1.2rem;
+        }
+      }
+      p {
+        position: relative;
+        // display: inline-block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: .9rem;
+        color: #fff;
+        margin-bottom: 2.1rem;
+        img {
+          margin: 0;
+        }
+      }
+    }
+  }
+  .faq_payment-area,
+  .faq_delivery-area,
+  .faq_return-area {
+    background-color: #F4EEEC;
+    background-image: url(https://cdn.shopify.com/s/files/1/0840/1993/7556/files/bg-filter.png);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 6rem;
+    margin-bottom: 10rem;
+    @include c.mq(md) {
+      background-attachment: local;
+    }
+    @include c.mq() {
+      padding: 3rem 2rem;
+      margin-bottom: 4rem;
+    }
+    h2 {
+      font-size: 2.4rem;
+      color: v.$main-txt03;
+      letter-spacing: 4px;
+      margin-bottom: 2rem;
+      @include c.mq() {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+      }
+    }
+    .qa-list {
+      .qa {
+        position: relative;
+        padding: 3rem 0;
+        border-bottom: 1px solid v.$main-txt03;
+        @include c.mq() {
+          padding: 1.5rem 0;
+        }
+        &::before {
+          position: absolute;
+          top: 4rem;
+          left: 0;
+          content: "";
+          width: 1.5rem;
+          height: 1.5px;
+          background-color: v.$main-txt03;
+          @include c.mq() {
+            top: 3rem;
+          }
+        }
+        &::after {
+          position: absolute;
+          top: 3.3rem;
+          left: 7px;
+          content: "";
+          width: 1.5px;
+          height: 1.5rem;
+          background-color: v.$main-txt03;
+          transition: all .1s;
+          @include c.mq() {
+            top: 2.3rem;
+          }
+        }
+        dt {
+          font-size: 1.5rem;
+          letter-spacing: 4px;
+          color: v.$bg-color;
+          padding-left: 3.5rem;
+          @include c.mq() {
+            font-size: 1.4rem;
+            line-height: 1.5;
+          }
+        }
+        dd {
+          background-color: #fff;
+          padding: 3rem;
+          margin-top: 3rem;
+          @include c.mq() {
+            padding: 1.5rem;
+          }
+          p {
+            font-size: 1.4rem;
+            font-weight: 400;
+            line-height: 2;
+            color: v.$bg-color;
+            margin-bottom: 3rem;
+            &:last-of-type {
+              margin-bottom: 0;
+            }
+            span {
+              font-weight: 600;
+            }
+          }
+        }
+      }
+      .open {
+        &::after {
+          width: 0;
+        }
+      }
+    }
+  }
+  .faq_return-area {
+    margin-bottom: 0;
+  }
+}
+
+/*************************************************
+  会社概要
+*************************************************/
+.p-company_wrap01 {
+  background-color: v.$bg-color;
+  padding: 7.5rem 0 10rem;
+  table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 1rem 0;
+    tr {
+      th {
+        padding: 2.5rem 0;
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: 500;
+        letter-spacing: 2px;
+        border-bottom: 1px solid v.$main-txt02;
+        color: #fff;
+        width: 12%;
+        @include c.mq() {
+          font-size: 1.4rem;
+          width: 24%;
+        }
+      }
+      td {
+        padding: 2.5rem 0 2.5rem 1.5rem;
+        font-size: 1.5rem;
+        letter-spacing: 4px;
+        border-bottom: 1px solid #fff;
+        color: #fff;
+        @include c.mq() {
+          font-size: 1.4rem;
+          line-height: 1.5;
+        }
+      }
+    }
+  }
+}
+
+/*************************************************
+  お問い合わせ
+*************************************************/
+.p-contact_wrap01 {
+  background-color: v.$bg-color;
+  padding: 10rem 0;
+  @include c.mq() {
+    padding: 6rem 0 10rem;
+  }
+  .message {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 10rem;
+    @include c.mq() {
+      text-align: left;
+      margin-bottom: 6rem;
+    }
+    a {
+      color: v.$main-txt02;
+      text-decoration: underline;
+      line-height: 2.4;
+      font-weight: 400;
+    }
+  }
+  .contact-tel {
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    padding: 3rem 0;
+    text-align: center;
+    margin-bottom: 15.9rem;
+    @include c.mq() {
+      padding: 2rem 0;
+      margin-bottom: 6rem;
+    }
+    p {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      color: #fff;
+      @include c.mq() {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+      }
+    }
+    a {
+      display: block;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.4rem;
+      font-size: 3.5rem;
+      color: #fff;
+      margin-bottom: 1.8rem;
+      @include c.mq() {
+        font-size: 2.5rem;
+      }
+    }
+    .business-hours {
+      font-size: 1.4rem;
+      font-weight: 400;
+      @include c.mq() {
+        font-size: 1.3rem;
+      }
+    }
+  }
+  .form_wrap {
+    background-color: #F4EEEC;
+    background-image: url(https://cdn.shopify.com/s/files/1/0840/1993/7556/files/bg-filter.png);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 5rem 6rem;
+    @include c.mq(md) {
+      background-attachment: scroll;
+    }
+    @include c.mq() {
+      padding: 4rem 2rem;
+    }
+    form {
+      table {
+        width: 100%;
+        table-layout: fixed;
+        tr {
+          &:last-of-type {
+            th {
+              vertical-align: baseline;
+              padding-top: 1rem;
+            }
+            td {
+              padding-bottom: 4rem;
+              @include c.mq() {
+                padding-bottom: 2rem;
+              }
+            }
+          }
+          th {
+            width: 16%;
+            font-size: 1.5rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            vertical-align: middle;
+            padding-bottom: 17px;
+            color: v.$main-txt03;
+            @include c.mq() {
+              display: block;
+              width: 100%;
+              padding-bottom: 10px;
+            }
+          }
+          td {
+            width: 84%;
+            padding-bottom: 17px;
+            color: v.$main-txt03;
+            @include c.mq() {
+              display: block;
+              width: 100%;
+              padding-bottom: 20px;
+            }
+            input {
+              width: 100%;
+              background-color: #fff;
+              padding: 10px;
+              font-size: 1.4rem;
+              letter-spacing: 1px;
+            }
+            textarea {
+              width: 100%;
+              background-color: #fff;
+              padding: 10px;
+              font-size: 1.4rem;
+              letter-spacing: 1px;
+            }
+          }
+        }
+      }
+      p {
+        text-align: center;
+        font-weight: 400;
+        color: v.$main-txt03;
+        margin-bottom: 5rem;
+        @include c.mq() {
+          text-align: left;
+          margin-bottom: 3rem;
+        }
+        a {
+          color: v.$main-txt02;
+          text-decoration: underline;
+        }
+      }
+      button {
+        position: relative;
+        width: 19rem;
+        height: 5.1rem;
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+        color: v.$main-txt03;
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+        align-items: center;
+        border-top: 1px solid v.$main-txt03;
+        border-bottom: 1px solid v.$main-txt03;
+        cursor: pointer;
+        margin: 0 auto;
+        @include c.mq() {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+/*************************************************
+  プライバシポリシー
+*************************************************/
+.p-privacy_wrap01 {
+  padding: 10rem 0;
+  background-color: v.$bg-color;
+  @include c.mq() {
+    padding: 6rem 0 10rem;
+  }
+  .privacy-area {
+    .box {
+      margin-bottom: 5rem;
+      @include c.mq() {
+        margin-bottom: 3rem;
+      }
+      &:last-of-type {
+        p {
+          @include c.mq() {
+            font-size: 1.2rem;
+          }
+        }
+      }
+      h2 {
+        font-size: 1.5rem;
+        color: #fff;
+        margin-bottom: 1.5rem;
+      }
+      p {
+        font-size: 1.4rem;
+        line-height: 2.2;
+        color: #fff;
+      }
+      &:first-of-type {
+        p {
+          color: v.$main-txt02;
+        }
+      }
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+/*************************************************
+  特定商取引法に基づく表記
+*************************************************/
+.p-terms_mv {
+  h1 {
+    @include c.mq() {
+      font-size: 2.2rem;
+    }
+  }
+}
+.p-terms_wrap01 {
+  padding: 10rem 0;
+  background-color: v.$bg-color;
+  @include c.mq() {
+    padding: 6rem 0 10rem;
+  }
+  table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 1rem 0;
+    tr {
+      th {
+        padding: 2.5rem 0;
+        text-align: center;
+        border-bottom: 1px solid v.$main-txt02;
+        width: 18%;
+        @include c.mq() {
+          width: 24%;
+        }
+        p {
+          display: inline-block;
+          font-size: 1.5rem;
+          text-align: left;
+          font-weight: 500;
+          letter-spacing: 2px;
+          line-height: 1.5;
+          color: #fff;
+        }
+      }
+      td {
+        padding: 2.5rem 0 2.5rem 1.5rem;
+        font-size: 1.5rem;
+        letter-spacing: 4px;
+        border-bottom: 1px solid #fff;
+        color: #fff;
+      }
+    }
+  }
+}

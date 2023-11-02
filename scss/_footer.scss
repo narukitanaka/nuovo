@@ -1,0 +1,271 @@
+@use "variable"as v;
+@use "common"as c;
+/*************************************************
+footer
+*************************************************/
+footer {
+  .footer-top {
+    position: relative;
+    padding: 2.7rem 0 2.3rem;
+    background: rgb(255,220,177);
+    background: linear-gradient(80deg, rgba(255,220,177,1) 0%, rgba(220,183,37,1) 100%);
+    @include c.mq() {
+      padding: 3rem 0;
+    }
+    nav {
+      width: 1200px;
+      margin: 0 auto;
+      @include c.mq(md) {
+        width: 90%;
+      }
+      @include c.mq() {
+        width: 80%;
+      }
+      ul {
+        display: flex;
+        @include c.mq() {
+          flex-wrap: wrap;
+          column-gap: 2.5rem;
+          row-gap: 1.5rem;
+        }
+        li {
+          padding: 0 3rem;
+          border-right:  1px solid v.$main-txt;
+          @include c.mq(md) {
+            padding: 0 1.5rem;
+          }
+          @include c.mq() {
+            width: 13.5rem;
+            padding: 0;
+            border: none;
+          }
+          &:first-of-type {
+            padding-left: 0;
+          }
+          &:last-of-type {
+            border-right: none;
+          }
+          a {
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: v.$main-txt03;
+          }
+        }
+      }
+    }
+  }
+  .footer-bottom {
+    position: relative;
+    padding-top: 6.1rem;
+    .inner {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 7.7rem;
+      border-bottom: 1.5px solid v.$main-txt03;
+      @include c.mq(md) {
+        width: 95%;
+      }
+    }
+    .column01 {
+      .logo {
+        margin-bottom: 1.6rem;
+      }
+      p {
+        font-size: 1.3rem;
+        line-height: 2;
+        margin-bottom: 4rem;
+        color: v.$main-txt03;
+      }
+      .footer-insta {
+        display: block;
+        margin-bottom: 3.4rem;
+      }
+      nav {
+        li {
+          // border-bottom: 1px solid v.$main-txt03;
+          margin-bottom: .3rem;
+          a {
+            font-size: 1.1rem;
+            color: v.$main-txt03;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+    .column02 {
+      .footer-tel {
+        display: block;
+        font-size: 2.7rem;
+        margin-bottom: 2rem;
+        color: v.$main-txt03;
+        @include c.mq(md) {
+          font-size: 2rem;
+        }
+        span {
+          font-size: 2rem;
+          @include c.mq(md) {
+            font-size: 1.6rem;
+          }
+        }
+      }
+      .btn02 {
+        width: 21.2rem;
+        margin: 0 auto 0 0;
+      }
+    }
+    .column03 {
+      p {
+        padding: 1rem 4.5rem;
+        color: v.$main-txt03;
+        border-top: 1px solid v.$main-txt03;
+        border-bottom: 1px solid v.$main-txt03;
+        margin-bottom: 1.5rem;
+      }
+      nav {
+        padding-left: 2.6rem;
+        ul {
+          li {
+            margin-bottom: 1.6rem;
+            a {
+              color: v.$main-txt03;
+            }
+          }
+        }
+      }
+    }
+    .column04 {
+      width: 45.4rem;
+      @include c.mq(md) {
+        width: 35rem;
+      }
+      p {
+        padding: 1rem 0;
+        color: v.$main-txt03;
+        text-align: center;
+        border-top: 1px solid v.$main-txt03;
+        border-bottom: 1px solid v.$main-txt03;
+        margin-bottom: 1.5rem;
+      }
+      nav {
+        padding-left: 2.6rem;
+        ul {
+          display: flex;
+          flex-wrap: wrap;
+          li {
+            width: 20.5rem;
+            margin-bottom: 1.6rem;
+            @include c.mq(md) {
+              width: 16rem;
+            }
+            a {
+              color: v.$main-txt03;
+            }
+          }
+        }
+      }
+    }
+  }
+  .footer-bottom_sp {
+    @include c.mq() {
+      position: relative;
+      padding: 4.4rem 0 5rem;
+      .price, .category {
+        p {
+          font-size: 1.5rem;
+          padding: 1rem 0;
+          border-top: 1px solid v.$main-txt03;
+          border-bottom: 1px solid v.$main-txt03;
+          text-align: center;
+          margin-bottom: 1.5rem;
+        }
+        nav {
+          padding-left: 2rem;
+          ul {
+            display: flex;
+            flex-wrap: wrap;
+            column-gap: 1.1rem;
+            row-gap: 1.5rem;
+            margin-bottom: 4.2rem;
+            li {
+              width: 14.6rem;
+              a {
+                font-size: 1.5rem;
+                color: v.$main-txt03;
+              }
+            }
+          }
+        }
+      }
+      .info {
+        .logo {
+          width: 11.2rem;
+          margin: 0 auto 1.2rem;
+          img {
+            width: 100%;
+          }
+        }
+        .txt {
+          font-size: 1.2rem;
+          text-align: center;
+          color: v.$main-txt03;
+          margin-bottom: 1.8rem;
+        }
+        .sp_footer-tel {
+          text-align: center;
+          margin-bottom: 1.7rem;
+          a {
+            font-size: 2rem;
+            color: v.$main-txt03;
+            text-align: center;
+            span {
+              font-size: 2.7rem;
+            }
+          }
+        }
+        .btn02 {
+          width: 100%;
+          height: 5.2rem;
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+  .footer-small {
+    position: relative;
+    padding: 1.2rem 0 3rem;
+    .inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+    }
+    p {
+      font-size: 1.2rem;
+      color: v.$main-txt03;
+      small {
+        font-size: 1.1rem;
+        @include c.mq() {
+          font-size: 1rem;
+          letter-spacing: 0;
+        }
+      }
+    }
+    .footer-small_column01 {
+      @include c.mq() {
+        .footer-insta {
+          display: block;
+          width: 2.6rem;
+          margin-bottom: 2rem;
+        }
+        li {
+          a {
+            font-size: 1.1rem;
+            color: v.$main-txt03;
+            text-decoration: underline;
+            font-weight: 500;
+            color: v.$main-txt03;
+          }
+        }
+      }
+    }
+  }
+}

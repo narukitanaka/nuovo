@@ -1,0 +1,181 @@
+<div class="bg-filter"><img src="https://cdn.shopify.com/s/files/1/0840/1993/7556/files/bg-filter.png" alt=""></div>
+<div class="video-cover">
+  <video id="screen" src="https://cdn.shopify.com/videos/c/o/v/8c31835f957b43cf9ec8316c76773a8b.mp4" autoplay muted playsinline loop></video>
+</div>
+
+<!-- メインビジュアル -->
+<div class="p-top_mv">
+  <div class="mv-imgbox">
+    <picture>
+      <source srcset="https://cdn.shopify.com/s/files/1/0840/1993/7556/files/mv_sp.jpg" media="(max-width: 768px)">
+      <img src="https://cdn.shopify.com/s/files/1/0840/1993/7556/files/mv.jpg" alt="">
+    </picture>
+  </div>
+  <div class="inner layer_custom">
+    <div class="mv-btn u-pc"><a class="btn" href="#">お取り寄せ　沖縄県内 送料無料</a></div>
+    <div class="mv-btn u-pc"><a class="btn02" href="#">BBQセット　県内 最短即日配送</a></div>
+  </div>
+  <div class="mv-btn_sp01 u-sp layer_custom">
+    <p>
+      お取り寄せ<br>
+      県内送料無料
+    </p>
+    <a href="#" class="btn">
+      家で楽しむ、最高の逸品
+    </a>
+  </div>
+  <div class="mv-btn_sp02 u-sp layer_custom">
+    <p>
+      BBQ セット<br>
+      県内 最短即日
+    </p>
+    <a href="#" class="btn02">
+      BBQの主役、極上の味
+    </a>
+  </div>
+</div><!-- /.p-top_mv -->
+
+<section class="p-top_wrap01">
+  <div class="inner layer_custom">
+    <h2 class="fadeIn"><img src="https://cdn.shopify.com/s/files/1/0840/1993/7556/files/p-top_about-ttl.png" alt="旨い肉へのこだわり"></h2>
+    <p class="fadeIn">
+      テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+    </p>
+    <a class="btn fadeIn" href="about.html">NUOVOのこだわり<img src="https://cdn.shopify.com/s/files/1/0840/1993/7556/files/arrow02.svg" alt=""></a>
+  </div><!-- /.inner -->
+</section><!-- /.p-top_wrap01 -->
+
+<section class="p-top_wrap02">
+  <div class="inner layer_custom">
+    <h2 class="fadeIn">ピックアップ</h2>
+    <p class="sub-ttl fadeIn">Pick Up</p>
+    <div class="box fadeIn">
+      <a href="#">
+        <picture>
+          <source srcset="https://cdn.shopify.com/s/files/1/0840/1993/7556/files/pickup_banner01_sp.jpg" media="(max-width: 768px)">
+          <img src="https://cdn.shopify.com/s/files/1/0840/1993/7556/files/pickup_banner01.jpg" alt="">
+        </picture>
+      </a>
+    </div>
+    <div class="box fadeIn">
+      <a href="#">
+        <picture>
+          <source srcset="https://cdn.shopify.com/s/files/1/0840/1993/7556/files/pickup_banner02_sp.jpg" media="(max-width: 768px)">
+          <img src="https://cdn.shopify.com/s/files/1/0840/1993/7556/files/pickup_banner02.jpg" alt="">
+        </picture>
+      </a>
+    </div>
+    <div class="box fadeIn">
+      <a href="#">
+        <picture>
+          <source srcset="https://cdn.shopify.com/s/files/1/0840/1993/7556/files/pickup_banner03_sp.jpg" media="(max-width: 768px)">
+          <img src="https://cdn.shopify.com/s/files/1/0840/1993/7556/files/pickup_banner03.jpg" alt="">
+        </picture>
+      </a>
+    </div>
+  </div><!-- /.inner -->
+</section><!-- /.p-top_wrap02 -->
+
+<section class="p-top_wrap03">
+  <div class="inner layer_custom">
+    <h2 class="fadeIn">売れ筋ランキング</h2>
+    <p class="sub-ttl fadeIn">Ranking</p>
+    <div class="ranking-area fadeIn">
+      {% assign ranking = collections['all'] %}
+      {% for product in ranking.products limit: 4 %}
+        <div class="box">
+          <a href="{{ product.url }}">
+            <div class="img-box obj-fit"><img src="{{ product.featured_image.src | img_url: 'master' }}" alt=""></div>
+            <p class="ttl">{{ product.title }}</p>
+            <p class="price">{{ product.price | money }}円<span>(税込)</span></p>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div><!-- /.inner -->
+</section><!-- /.p-top_wrap03 -->
+
+<section class="p-top_wrap04">
+  <div class="inner layer_custom">
+    <h2 class="fadeIn">商品一覧</h2>
+    <p class="sub-ttl fadeIn">Line Up</p>
+    <div class="lineup-area">
+      <div class="box fadeIn">
+        <a href="#">
+          <div class="img-box obj-fit"><img src="https://cdn.shopify.com/s/files/1/0840/1993/7556/files/p-top_category-img01.jpg" alt=""></div>
+          <p>近江牛</p>
+        </a>
+      </div>
+      <div class="box fadeIn">
+        <a href="#">
+          <div class="img-box obj-fit"><img src="https://cdn.shopify.com/s/files/1/0840/1993/7556/files/p-top_category-img02.jpg" alt=""></div>
+          <p>県産黒毛和牛</p>
+        </a>
+      </div>
+      <div class="box fadeIn">
+        <a href="#">
+          <div class="img-box obj-fit"><img src="https://cdn.shopify.com/s/files/1/0840/1993/7556/files/p-top_category-img03.jpg" alt=""></div>
+          <p>BBQセット</p>
+        </a>
+      </div>
+      <div class="box fadeIn">
+        <a href="#">
+          <div class="img-box obj-fit"><img src="https://cdn.shopify.com/s/files/1/0840/1993/7556/files/p-top_category-img04.jpg" alt=""></div>
+          <p>ホルモン</p>
+        </a>
+      </div>
+      <div class="box fadeIn">
+        <a href="#">
+          <div class="img-box obj-fit"><img src="https://cdn.shopify.com/s/files/1/0840/1993/7556/files/p-top_category-img05.jpg" alt=""></div>
+          <p>加工肉</p>
+        </a>
+      </div>
+      <div class="box fadeIn">
+        <a href="#">
+          <div class="img-box obj-fit"><img src="https://cdn.shopify.com/s/files/1/0840/1993/7556/files/p-top_category-img06.jpg" alt=""></div>
+          <p>希少部位</p>
+        </a>
+      </div>
+    </div><!-- /.lineup-area -->
+    <a class="btn02 fadeIn" href="item-list.html">全ての商品を見る<img src="https://cdn.shopify.com/s/files/1/0840/1993/7556/files/arrow01.svg" alt=""></a>
+  </div><!-- /.inner -->
+</section><!-- /.p-top_wrap04 -->
+
+<section class="p-top_wrap05">
+  <div class="inner layer_custom">
+    <h2 class="fadeIn">よくあるご質問</h2>
+    <p class="sub-ttl fadeIn">FAQ</p>
+    <div class="faq-area fadeIn">
+      <div class="box">
+        <a href="faq.html#payment">
+          <img src="https://cdn.shopify.com/s/files/1/0840/1993/7556/files/p-top_faq-icon01.svg" alt="">
+          <p>ご注文・支払いについて<img src="https://cdn.shopify.com/s/files/1/0840/1993/7556/files/arrow04.svg" alt=""></p>
+        </a>
+      </div>
+      <div class="box">
+        <a href="faq.html#delivery">
+          <img src="https://cdn.shopify.com/s/files/1/0840/1993/7556/files/p-top_faq-icon02.svg" alt="">
+          <p>配送・送料について<img src="https://cdn.shopify.com/s/files/1/0840/1993/7556/files/arrow04.svg" alt=""></p>
+        </a>
+      </div>
+      <div class="box">
+        <a href="faq.html#return">
+          <img src="https://cdn.shopify.com/s/files/1/0840/1993/7556/files/p-top_faq-icon03.svg" alt="">
+          <p>返品・交換について<img src="https://cdn.shopify.com/s/files/1/0840/1993/7556/files/arrow04.svg" alt=""></p>
+        </a>
+      </div>
+    </div><!-- /.faq-area -->
+  </div><!-- /.inner -->
+</section><!-- /.p-top_wrap05 -->
+
+
+{% schema %}
+  {
+    "name": "top-main",
+    "presets": [
+      {
+        "name": "top-main"
+      }
+    ]
+  }
+{% endschema %}
