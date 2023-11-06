@@ -1486,22 +1486,14 @@ top
   }
 }
 
-.p-pager .p-gager__list {
+.pagination-wrapper .pagination .pagination__list {
   display: flex;
   justify-content: center;
 }
-.p-pager .p-gager__list .p-pager__item {
+.pagination-wrapper .pagination .pagination__list .pagination__item {
   margin: 0 5px;
   font-family: "Shippori Mincho", serif;
   font-weight: 600;
-}
-@media screen and (max-width: 768px) {
-  .p-pager .p-gager__list .p-pager__item {
-    margin: 0;
-  }
-}
-
-.p-pager__link {
   width: 3.5rem;
   height: 3.5rem;
   font-size: 1.6rem;
@@ -1509,10 +1501,14 @@ top
   place-content: center;
   color: #fff;
 }
+@media screen and (max-width: 768px) {
+  .pagination-wrapper .pagination .pagination__list .pagination__item {
+    margin: 0;
+  }
+}
 
-.p-pager__link--current {
-  color: #DEB462;
-  text-decoration: underline;
+.pagination__item--current {
+  color: #DEB462 !important;
 }
 
 /*************************************************

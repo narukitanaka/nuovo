@@ -8,12 +8,20 @@
     <div class="header-menu">
       <div class="header_icon_login">
         <a href="#">
-          <img src="https://cdn.shopify.com/s/files/1/0840/1993/7556/files/icon-login.svg" alt="">
+          {% if template.name == 'index' %}
+            <img src="https://cdn.shopify.com/s/files/1/0840/1993/7556/files/icon-login.svg" alt="">
+          {% else %}
+            <img src="https://cdn.shopify.com/s/files/1/0840/1993/7556/files/icon-login02.svg" alt="">
+          {% endif %}
         </a>
       </div>
       <div class="header_icon_cart">
         <a href="#">
-          <img src="https://cdn.shopify.com/s/files/1/0840/1993/7556/files/icon-cart.svg" alt="">
+          {% if template.name == 'index' %}
+            <img src="https://cdn.shopify.com/s/files/1/0840/1993/7556/files/icon-cart.svg" alt="">
+          {% else %}
+            <img src="https://cdn.shopify.com/s/files/1/0840/1993/7556/files/icon-cart02.svg" alt="">
+          {% endif %}
         </a>
       </div>
       <div class="hambager-content">
@@ -67,44 +75,44 @@
         <ul class="nav-price">
           <p><img src="https://cdn.shopify.com/s/files/1/0840/1993/7556/files/icon-menu_price.svg" alt="">価格から探す</p>
           <li class="nav-category-list">
-            <a class="nav-list-ttl" href="#">1,000円以下</a>
+            <a class="nav-list-ttl" href="/collections/0001">1,000円以下</a>
           </li>
           <li class="nav-category-list">
-            <a class="nav-list-ttl" href="#">1,000～3,000円</a>
+            <a class="nav-list-ttl" href="/collections/1000">1,000～3,000円</a>
           </li>
           <li class="nav-category-list">
-            <a class="nav-list-ttl" href="#">3,000～5,000円</a>
+            <a class="nav-list-ttl" href="/collections/3000">3,000～5,000円</a>
           </li>
           <li class="nav-category-list">
-            <a class="nav-list-ttl" href="#">5,000～10,000円</a>
+            <a class="nav-list-ttl" href="/collections/5000">5,000～10,000円</a>
           </li>
           <li class="nav-category-list">
-            <a class="nav-list-ttl" href="#">10,000円以上</a>
+            <a class="nav-list-ttl" href="/collections/10000">10,000円以上</a>
           </li>
         </ul>
         <ul class="nav-category">
           <p><img src="https://cdn.shopify.com/s/files/1/0840/1993/7556/files/icon-menu_category.svg" alt="">カテゴリーから探す</p>
           <div>
             <li class="nav-category-list">
-              <a class="nav-list-ttl" href="#">全て</a>
+              <a class="nav-list-ttl" href="/collections/all">全て</a>
             </li>
             <li class="nav-category-list">
-              <a class="nav-list-ttl" href="#">ホルモン</a>
+              <a class="nav-list-ttl" href="/collections/hormone">ホルモン</a>
             </li>
             <li class="nav-category-list">
-              <a class="nav-list-ttl" href="#">近江牛</a>
+              <a class="nav-list-ttl" href="/collections/oumigyu">近江牛</a>
             </li>
             <li class="nav-category-list">
-              <a class="nav-list-ttl" href="#">加工肉</a>
+              <a class="nav-list-ttl" href="/collections/processdmeat">加工肉</a>
             </li>
             <li class="nav-category-list">
-              <a class="nav-list-ttl" href="#">沖縄県産 黒毛和牛</a>
+              <a class="nav-list-ttl" href="/collections/kurogewagyu">沖縄県産 黒毛和牛</a>
             </li>
             <li class="nav-category-list">
-              <a class="nav-list-ttl" href="#">希少部位</a>
+              <a class="nav-list-ttl" href="/collections/rareparts">希少部位</a>
             </li>
             <li class="nav-category-list">
-              <a class="nav-list-ttl" href="#">BBQセット</a>
+              <a class="nav-list-ttl" href="/collections/bbq">BBQセット</a>
             </li>
           </div>
         </ul>
