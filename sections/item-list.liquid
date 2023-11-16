@@ -39,7 +39,7 @@
               <img src="{{ product.featured_image.src | img_url: 'master' }}" alt="">
             </div>
             <p class="item">{{ product.title }}</p>
-            <p class="price">{{ product.price | money }}円<span>(税込)</span></p>
+            <p class="price">{{ product.price | money }}<span>(税込)</span></p>
           </a>
         </li>
       {% endfor %}

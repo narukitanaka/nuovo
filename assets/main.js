@@ -47,3 +47,25 @@ $(".qa-list dl").on("click", function(e){
     }
 });
 
+
+//上にスクロールした時のヘッダー
+const header = document.getElementById("header"); // ヘッダーを取得
+const hH = header.clientHeight; // ヘッダーの高さを取得
+let lastScrollTop = 0; // 最後のスクロール位置を保持する変数
+window.addEventListener("scroll", () => {
+  const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+  if (currentScroll > lastScrollTop && currentScroll > hH) {
+    // 下にスクロール
+    header.classList.add('header--unpinned');
+    header.classList.remove('header--cover');
+  } else if (currentScroll < lastScrollTop) {
+    // 上にスクロール
+    header.classList.remove('header--unpinned');
+    header.classList.add('header--cover');
+  }
+  if (currentScroll === 0) {
+    // スクロール位置がページの最上部
+    header.classList.remove('header--cover');
+  }
+  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // ネガティブなスクロール値を防ぐ
+});

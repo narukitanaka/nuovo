@@ -241,11 +241,11 @@
       {{ 'base.css' | asset_url | stylesheet_tag }}
       {% style %}
         main {
-          padding: 60px 0 150px;
+          padding: 100px 0 150px;
         }
         @media screen and (max-width: 769px) {
           main {
-            padding: 40px 0 100px;
+            padding: 60px 0 100px;
           }
         }
       {% endstyle %}
@@ -299,7 +299,7 @@
 
     {% sections 'header-group' %}
 
-    <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
+  <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1" {% if template.name == 'cart' or template.name == 'search' or template.name == 'account' or template.name == 'addresses' or template.name == 'login' or template.name == 'order' or template.name == 'register' %}style="background-color: #fff;"{% endif %}>
       {{ content_for_layout }}
     </main>
 

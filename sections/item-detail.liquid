@@ -1,0 +1,132 @@
+<div class="bg-filter"><img src="https://cdn.shopify.com/s/files/1/0840/1993/7556/files/bg-filter.png" alt=""></div>
+
+<section class="p-item_wrap01">
+  <div class="inner">
+
+    <div class="p-merchandise-detail">
+      <div class="p-merchandise__img-content">
+        <div class="p-merchandise__img-wrapper">
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              {% for image in product.images %}
+                <div class="swiper-slide">
+                  <div class="p-img-wrapper">
+                    <img src="{{ image.src | img_url: 'master' }}" alt="">
+                  </div>
+                </div>
+              {%- endfor -%}
+            </div><!-- /.swiper-wrapper -->
+          </div><!-- /.swiper -->
+          <div class="thumb-list">
+            {% for image in product.images %}
+              <div class="thumb-item">
+                <a class="thumb-link" href="javascript:void(0);" onclick="thumbnail({{ forloop.index }})">
+                  <img src="{{ image.src | img_url: 'master' }}" alt="">
+                </a>
+              </div>
+            {%- endfor -%}
+          </div><!-- /.thumb-list -->
+        </div><!-- /.p-merchandise__img-wrapper -->
+      </div><!-- /.left -->
+      <div class="p-merchandise__detail-content">
+        <ul class="c-category__list">
+          <li class="c-category__item">
+            商品カテゴリ：
+            {% for collection in product.collections %}
+              {% assign excluded_collections = 'all,10000,5000,3000,1000,0001' | split: ',' %}
+              {% unless excluded_collections contains collection.handle %}
+                {{ collection.title }}
+              {% endunless %}
+            {% endfor %}
+          </li>
+        </ul>
+        <h1 class="c-merchandise__name">{{ product.title }}</h1>
+        {% if product.compare_at_price_max and product.compare_at_price_max > product.price %}
+          <p class="c-price">{{ product.compare_at_price_max | money_with_currency }}（税込）</p>
+          <p class="c-price" style="color: #f00;">割引価格：{{ product.price | money_with_currency }}（税込）</p>
+        {% else %}
+          <p class="c-price">{{ product.price | money_with_currency }}（税込）</p>
+          </p>
+        {% endif %}
+        <table class="p-merchandise__infomation">
+          <tr>
+            {% if product.metafields.custom._maker != empty %}
+              <th>内容量</th>
+              <td>{{ product.metafields.custom._capacity }}</td>
+            {% endif %}
+          </tr>
+          <tr>
+            {% if product.metafields.custom._maker != empty %}
+              <th>原材料名</th>
+              <td>{{ product.metafields.custom._material }}</td>
+            {% endif %}
+          </tr>
+          <tr>
+            {% if product.metafields.custom._maker != empty %}
+              <th>賞味期限</th>
+              <td>{{ product.metafields.custom._best-before }}</td>
+            {% endif %}
+          </tr>
+          <tr>
+            {% if product.metafields.custom._maker != empty %}
+            <th>保存方法</th>
+            <td>{{ product.metafields.custom._preservation }}</td>
+            {% endif %}
+          </tr>
+          <tr>
+            {% if product.metafields.custom._maker != empty %}
+            <th>配送方法</th>
+            <td>{{ product.metafields.custom._shipping-method }}</td>
+            {% endif %}
+          </tr>
+          <tr>
+            {% if product.metafields.custom._maker != empty %}
+            <th>お届け日目安</th>
+            <td>{{ product.metafields.custom._delivery-date | newline_to_br }}</td>
+            {% endif %}
+          </tr>
+        </table>
+
+        <div class="p-txt-block">
+          <p class="p-block__ttl">商品特徴</p>
+          {{ product.content }}
+        </div>
+
+        <div class="p-count">
+          <form
+            method="post"
+            action="/cart/add"
+            id="AddToCartForm">
+            <input
+              type="hidden"
+              name="id"
+              value="{{ product.variants[0].id }}" />
+            <div class="p-select-wrapper">
+              <select id="quantity" name="quantity">
+                {% for i in (1..10) %}
+                  <option value="{{ i }}">{{ i }}</option>
+                {% endfor %}
+              </select>
+            </div>
+            <div class="p-btn-wrapper">
+              <button type="submit" class="c-btn">カートに入れる</button>
+            </div>
+          </form>
+        </div>
+        <a href="/pages/contact-form/" class="c-txt-inquiry">この商品について問い合わせる</a>
+      </div><!-- /.p-merchandise__detail-content -->
+    </div><!-- /.p-merchandise-detail -->
+  </div><!-- /.inner -->
+</section><!-- /.p-item_wrap01 -->
+
+
+{% schema %}
+  {
+    "name": "item-detail",
+    "presets": [
+      {
+        "name": "item-detail"
+      }
+    ]
+  }
+{% endschema %}

@@ -110,6 +110,7 @@ input[type=button]:focus {
   width: 100vw;
   height: 100vh;
   position: fixed;
+  top: 0;
   background-color: #F4EEEC;
   z-index: -10;
 }
@@ -227,16 +228,15 @@ header
 *************************************************/
 header {
   width: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
-  padding: 2rem 0 0;
-  background: url(https://cdn.shopify.com/s/files/1/0840/1993/7556/files/header-bg.png) no-repeat 50% 100%/cover;
+  padding: 2rem 0;
   z-index: 100;
 }
 @media screen and (max-width: 768px) {
   header {
     background: none;
-    padding: 1.5rem 0 0;
+    padding: 1.5rem 0;
   }
 }
 header a {
@@ -282,6 +282,7 @@ header .logo p {
 }
 @media screen and (max-width: 768px) {
   header .logo p {
+    padding-top: 0;
     font-size: 1.1rem;
   }
 }
@@ -357,6 +358,50 @@ header .p-under_header .hambager-content .c-line {
 .header_icon_login p,
 .header_icon_cart p {
   font-weight: 500;
+}
+
+header {
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+}
+
+.header--unpinned {
+  transform: translateY(-150%);
+}
+
+.scoll-go {
+  display: none;
+}
+
+.header--cover {
+  background-color: #eee;
+  background-image: url(https://cdn.shopify.com/s/files/1/0840/1993/7556/files/bg-filter.png);
+}
+.header--cover .scoll-stop {
+  display: none;
+}
+.header--cover .scoll-go {
+  display: block;
+}
+.header--cover .logo p {
+  color: #3F1E10;
+}
+.header--cover .hambager-content {
+  border: 1px solid #3F1E10 !important;
+}
+.header--cover .hambager-content .c-line {
+  background-color: #3F1E10 !important;
+}
+
+@media screen and (max-width: 768px) {
+  .shop-temp {
+    border: 1px solid #3F1E10 !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  .shop-temp .c-line {
+    background-color: #3F1E10 !important;
+  }
 }
 
 .hambager-content {
@@ -662,15 +707,16 @@ header .p-under_header .hambager-content .c-line {
 
 .is-megamenu-icon {
   justify-content: end !important;
+  position: fixed;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .is-megamenu-icon .logo, .is-megamenu-icon .header_icon_login, .is-megamenu-icon .header_icon_cart {
   display: none;
 }
 .is-megamenu-icon .hambager-content {
   border: 1px solid #5D2813 !important;
-  position: fixed;
-  top: 2rem;
-  right: 5vw;
 }
 
 /*************************************************
@@ -971,13 +1017,13 @@ top
 }
 
 .p-top_mv {
-  position: relative;
   width: 100vw;
 }
 .p-top_mv img {
   width: 100%;
 }
 .p-top_mv .inner {
+  width: 83.3333333333vw;
   display: flex;
   justify-content: space-between;
   position: absolute;
@@ -989,7 +1035,7 @@ top
   position: relative;
   display: grid;
   place-content: center;
-  width: 48rem;
+  width: 33.3333333333vw;
   height: 6rem;
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.05);
@@ -1020,7 +1066,7 @@ top
   height: 1.5rem;
 }
 .p-top_mv .inner .mv-btn .btn, .p-top_mv .inner .mv-btn .btn02 {
-  width: 47rem;
+  width: 32.6388888889vw;
   font-weight: 600;
   letter-spacing: 3px;
 }
@@ -1038,7 +1084,7 @@ top
 }
 .p-top_mv .mv-btn_sp01 p, .p-top_mv .mv-btn_sp02 p {
   font-size: 2.6rem;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.5;
   letter-spacing: 2px;
   margin-bottom: 1rem;
@@ -1435,7 +1481,7 @@ top
 *************************************************/
 .p-under_mv {
   background-attachment: fixed;
-  padding: 18.6rem 0 22.4rem;
+  padding: 18.6rem 0 24.4rem;
 }
 @media screen and (max-width: 768px) {
   .p-under_mv {
@@ -1482,7 +1528,7 @@ top
   .p-company_mv,
   .p-privacy_mv,
   .p-terms_mv {
-    background-position: 20%;
+    background-image: url(https://cdn.shopify.com/s/files/1/0840/1993/7556/files/p-under_mv01_sp.jpg);
   }
 }
 
@@ -1519,6 +1565,7 @@ top
   background-repeat: no-repeat;
   background-position: top;
   background-size: cover;
+  padding: 13.1944444444vw 0 15.2777777778vw;
 }
 @media screen and (max-width: 1100px) {
   .p-about_mv {
@@ -1913,7 +1960,7 @@ top
 }
 @media screen and (max-width: 768px) {
   .p-item-list_mv {
-    background-position: 40%;
+    background-image: url(https://cdn.shopify.com/s/files/1/0840/1993/7556/files/p-item-list_mv_sp.jpg);
     padding: 23.4rem 0 15.5rem;
   }
 }
@@ -2205,7 +2252,7 @@ top
   }
 }
 .p-merchandise__detail-content .p-merchandise__infomation th {
-  width: 15%;
+  width: 20%;
   font-weight: 600;
   text-align: left;
   letter-spacing: 2px;
@@ -2261,7 +2308,7 @@ top
     width: 70%;
   }
 }
-.p-merchandise__detail-content .p-txt-block .p-block__text {
+.p-merchandise__detail-content .p-txt-block p, .p-merchandise__detail-content .p-txt-block span {
   font-size: 1.5rem;
   letter-spacing: 3px;
   line-height: 1.7;
@@ -2827,6 +2874,67 @@ top
 }
 
 /*************************************************
+お問い合わせ　-送信後
+*************************************************/
+.form-success-title {
+  font-size: 16px !important;
+  margin-bottom: 4rem;
+  position: sticky;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+@media screen and (max-width: 768px) {
+  .form-success-title {
+    font-size: 14px !important;
+    text-align: left !important;
+  }
+}
+
+.form-success-title svg {
+  width: 2rem;
+}
+@media screen and (max-width: 768px) {
+  .form-success-title svg {
+    width: 5rem;
+  }
+}
+
+.form-error-title {
+  font-size: 16px !important;
+  margin-bottom: 1rem;
+  position: sticky;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+@media screen and (max-width: 768px) {
+  .form-error-title {
+    font-size: 14px !important;
+  }
+}
+
+.form-error-title svg {
+  width: 2rem;
+}
+
+.form-error-text {
+  display: block;
+  font-size: 16px !important;
+  text-align: center;
+  color: #DD0000;
+  margin-bottom: 4rem;
+  position: sticky;
+}
+@media screen and (max-width: 768px) {
+  .form-error-text {
+    font-size: 14px !important;
+  }
+}
+
+/*************************************************
   プライバシポリシー
 *************************************************/
 .p-privacy_wrap01 {
@@ -2917,6 +3025,286 @@ top
   letter-spacing: 4px;
   border-bottom: 1px solid #fff;
   color: #fff;
+}
+
+/*************************************************
+  商品LP -共通
+*************************************************/
+.p-lp_mv {
+  position: relative;
+}
+
+.p-lp_lineup {
+  padding: 10rem 0 15rem;
+  background-color: #F4EEEC;
+}
+@media screen and (max-width: 768px) {
+  .p-lp_lineup {
+    padding: 5rem 0;
+  }
+}
+.p-lp_lineup .title h2 {
+  text-align: center;
+  color: #754C24;
+  margin-bottom: 1rem;
+}
+.p-lp_lineup .title .sub-ttl {
+  text-align: center;
+  margin-bottom: 7rem;
+  color: #754C24;
+}
+@media screen and (max-width: 768px) {
+  .p-lp_lineup .title .sub-ttl {
+    margin-bottom: 4rem;
+  }
+}
+.p-lp_lineup ul {
+  display: flex;
+  flex-wrap: wrap;
+  -moz-column-gap: 2.5rem;
+       column-gap: 2.5rem;
+  row-gap: 2rem;
+}
+@media screen and (max-width: 768px) {
+  .p-lp_lineup ul {
+    -moz-column-gap: 1.5rem;
+         column-gap: 1.5rem;
+  }
+}
+.p-lp_lineup ul li {
+  width: calc(25% - 1.875rem);
+}
+@media screen and (max-width: 768px) {
+  .p-lp_lineup ul li {
+    width: calc(50% - 0.75rem);
+  }
+}
+.p-lp_lineup ul li .img-box {
+  width: 100%;
+  aspect-ratio: 14/9;
+  margin-bottom: 1.2rem;
+}
+@media screen and (max-width: 768px) {
+  .p-lp_lineup ul li .img-box {
+    margin-bottom: 1rem;
+  }
+}
+.p-lp_lineup ul li .name, .p-lp_lineup ul li .price {
+  font-size: 1.6rem;
+  color: #3F1E10;
+}
+@media screen and (max-width: 768px) {
+  .p-lp_lineup ul li .name, .p-lp_lineup ul li .price {
+    font-size: 1.4rem;
+  }
+}
+.p-lp_lineup ul li .price span {
+  font-size: 1.3rem;
+}
+@media screen and (max-width: 768px) {
+  .p-lp_lineup ul li .price span {
+    font-size: 1.1rem;
+  }
+}
+
+/*************************************************
+  商品LP -近江牛
+*************************************************/
+.p-lp_mv.p-oumigyu {
+  background-color: #1C0D07;
+}
+.p-lp_mv.p-oumigyu .shipping-free {
+  position: absolute;
+  bottom: 20.1388888889vw;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 46.0416666667vw;
+}
+@media screen and (max-width: 768px) {
+  .p-lp_mv.p-oumigyu .shipping-free {
+    bottom: 20.8vw;
+    width: 72.8vw;
+  }
+}
+
+.p-lp_wrap01.p-oumigyu {
+  background-color: #1C0D07;
+  margin-top: -11.25vw;
+  padding-bottom: 10rem;
+}
+@media screen and (max-width: 768px) {
+  .p-lp_wrap01.p-oumigyu {
+    margin-top: -7.4666666667vw;
+    padding-bottom: 5rem;
+  }
+}
+
+.p-lp_wrap02.p-oumigyu {
+  padding: 6rem 0 5rem;
+}
+@media screen and (max-width: 768px) {
+  .p-lp_wrap02.p-oumigyu {
+    padding: 4rem 0;
+  }
+}
+.p-lp_wrap02.p-oumigyu .banner {
+  margin-bottom: 3.5rem;
+}
+@media screen and (max-width: 768px) {
+  .p-lp_wrap02.p-oumigyu .banner {
+    margin-bottom: 3rem;
+  }
+}
+.p-lp_wrap02.p-oumigyu .banner a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.p-lp_wrap02.p-oumigyu .shipping-free {
+  width: 46.3888888889vw;
+  margin: 0 auto;
+}
+@media screen and (max-width: 768px) {
+  .p-lp_wrap02.p-oumigyu .shipping-free {
+    width: 72.2666666667vw;
+  }
+}
+
+.p-lp_wrap03.p-oumigyu {
+  background-color: #1C0D07;
+  padding: 10rem 0;
+}
+@media screen and (max-width: 768px) {
+  .p-lp_wrap03.p-oumigyu {
+    padding: 5rem 0;
+  }
+}
+
+/*************************************************
+  商品LP -BBQセット
+*************************************************/
+.p-lp_mv.p-bbq {
+  background-color: rgba(244, 238, 236, 0.7);
+}
+.p-lp_mv.p-bbq .sokuzitu {
+  position: absolute;
+  bottom: 13.5416666667vw;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@media screen and (max-width: 768px) {
+  .p-lp_mv.p-bbq .sokuzitu {
+    bottom: 20.8vw;
+  }
+}
+.p-lp_mv.p-bbq .sokuzitu .img-box {
+  width: 46.25vw;
+  margin-bottom: 1.4rem;
+}
+@media screen and (max-width: 768px) {
+  .p-lp_mv.p-bbq .sokuzitu .img-box {
+    width: 80.8vw;
+  }
+}
+.p-lp_mv.p-bbq .sokuzitu .txt {
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 0.7rem;
+}
+.p-lp_mv.p-bbq .sokuzitu .tel {
+  font-size: 2.7rem;
+  text-align: center;
+  color: #3F1E10;
+  margin-left: 1.2rem;
+}
+.p-lp_mv.p-bbq .sokuzitu .tel span {
+  font-size: 2rem;
+}
+
+.p-lp_wrap01.p-bbq {
+  background-color: rgba(244, 238, 236, 0.7);
+  margin-top: -10.8333333333vw;
+  padding-bottom: 10rem;
+}
+@media screen and (max-width: 768px) {
+  .p-lp_wrap01.p-bbq {
+    margin-top: -20.8vw;
+    padding-bottom: 5rem;
+  }
+}
+
+.p-lp_wrap02.p-bbq {
+  padding: 10rem 0;
+}
+@media screen and (max-width: 768px) {
+  .p-lp_wrap02.p-bbq {
+    padding: 4rem 0 5rem;
+  }
+}
+.p-lp_wrap02.p-bbq .banner {
+  margin-bottom: 6.5rem;
+}
+@media screen and (max-width: 768px) {
+  .p-lp_wrap02.p-bbq .banner {
+    margin-bottom: 3rem;
+  }
+}
+.p-lp_wrap02.p-bbq .banner a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/*************************************************
+  商品LP -沖縄県産黒毛和牛
+*************************************************/
+.p-lp_mv.p-kensan {
+  background-color: #280000;
+}
+
+.p-lp_wrap01.p-kensan {
+  background-color: #280000;
+  margin-top: -31.875vw;
+  padding-bottom: 10rem;
+}
+@media screen and (max-width: 768px) {
+  .p-lp_wrap01.p-kensan {
+    margin-top: -29.8666666667vw;
+    padding-bottom: 5rem;
+  }
+}
+
+.p-lp_wrap02.p-kensan {
+  padding: 10rem 0;
+}
+@media screen and (max-width: 768px) {
+  .p-lp_wrap02.p-kensan {
+    padding: 5rem 0;
+  }
+}
+.p-lp_wrap02.p-kensan .banner {
+  margin-bottom: 3.5rem;
+}
+@media screen and (max-width: 768px) {
+  .p-lp_wrap02.p-kensan .banner {
+    margin-bottom: 3rem;
+  }
+}
+.p-lp_wrap02.p-kensan .banner a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.p-lp_wrap03.p-kensan {
+  background-color: #280000;
+  padding: 10rem 0;
+}
+@media screen and (max-width: 768px) {
+  .p-lp_wrap03.p-kensan {
+    padding: 5rem 0;
+  }
 }
 
 /**

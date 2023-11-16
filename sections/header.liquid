@@ -1,30 +1,51 @@
-<header>
-  <div class="header_inner{% unless template.name == 'index' %} p-under_header{% endunless %}">
+<header id="header">
+  <div class="header_inner{% unless template.name == 'index' or template.name == 'cart' or template.name == 'search' or template.name == 'account' or template.name == 'addresses' or template.name == 'login' or template.name == 'order' or template.name == 'register' %} p-under_header{% endunless %}">
     <div class="logo">
-      <a href="{{ routes.root_url }}"><div class="img-box"><img src="https://cdn.shopify.com/s/files/1/0840/1993/7556/files/logo.png" alt=""></div></a>
-      <p class="u-pc">沖縄で肉ならNUOVO オンラインストア</p>
-      <p class="u-sp">沖縄の肉屋 オンラインストア</p>
+      <a href="{{ routes.root_url }}">
+        <div class="img-box">
+          {% if template.name == 'cart' or template.name == 'search' or template.name == 'account' or template.name == 'addresses' or template.name == 'login' or template.name == 'order' or template.name == 'register' %}
+            <img src="https://cdn.shopify.com/s/files/1/0840/1993/7556/files/logo02.png" alt="">
+          {% else %}
+            <img class="scoll-stop" src="https://cdn.shopify.com/s/files/1/0840/1993/7556/files/logo.png" alt="">
+            <img class="scoll-go" src="https://cdn.shopify.com/s/files/1/0840/1993/7556/files/logo-footer.svg" alt="">
+          {% endif %}
+        </div>
+      </a>
+      <p 
+        class="u-pc"
+        {% if template.name == 'cart' or template.name == 'search' or template.name == 'account' or template.name == 'addresses' or template.name == 'login' or template.name == 'order' or template.name == 'register' %}
+        style="color: #3F1E10;"
+        {% endif %}
+      >沖縄で肉ならNUOVO オンラインストア</p>
+      <p 
+        class="u-sp"
+        {% if template.name == 'cart' or template.name == 'search' or template.name == 'account' or template.name == 'addresses' or template.name == 'login' or template.name == 'order' or template.name == 'register' %}
+        style="color: #3F1E10;"
+        {% endif %}
+      >沖縄の肉屋 オンラインストア</p>
     </div>
     <div class="header-menu">
       <div class="header_icon_login">
-        <a href="#">
-          {% if template.name == 'index' %}
+        <a href="/account/">
+          {% if template.name == 'index' or template.name == 'cart' or template.name == 'search' or template.name == 'account' or template.name == 'addresses' or template.name == 'login' or template.name == 'order' or template.name == 'register' %}
             <img src="https://cdn.shopify.com/s/files/1/0840/1993/7556/files/icon-login.svg" alt="">
           {% else %}
-            <img src="https://cdn.shopify.com/s/files/1/0840/1993/7556/files/icon-login02.svg" alt="">
+            <img class="scoll-stop" src="https://cdn.shopify.com/s/files/1/0840/1993/7556/files/icon-login02.svg" alt="">
+            <img class="scoll-go" src="https://cdn.shopify.com/s/files/1/0840/1993/7556/files/icon-login.svg" alt="">
           {% endif %}
         </a>
       </div>
       <div class="header_icon_cart">
-        <a href="#">
-          {% if template.name == 'index' %}
+        <a href="/cart/">
+          {% if template.name == 'index' or template.name == 'cart' or template.name == 'search' or template.name == 'account' or template.name == 'addresses' or template.name == 'login' or template.name == 'order' or template.name == 'register' %}
             <img src="https://cdn.shopify.com/s/files/1/0840/1993/7556/files/icon-cart.svg" alt="">
           {% else %}
-            <img src="https://cdn.shopify.com/s/files/1/0840/1993/7556/files/icon-cart02.svg" alt="">
+            <img class="scoll-stop" src="https://cdn.shopify.com/s/files/1/0840/1993/7556/files/icon-cart02.svg" alt="">
+            <img class="scoll-go" src="https://cdn.shopify.com/s/files/1/0840/1993/7556/files/icon-cart.svg" alt="">
           {% endif %}
         </a>
       </div>
-      <div class="hambager-content">
+      <div class="hambager-content {% if template.name == 'cart' or template.name == 'search' or template.name == 'account' or template.name == 'addresses' or template.name == 'login' or template.name == 'order' or template.name == 'register' %}shop-temp{% endif %}">
         <button type="button" class="hambager">
           <span class="c-line"></span>
           <span class="c-line"></span>
@@ -47,19 +68,19 @@
           </a>
         </li>
         <li class="nav-list">
-          <a href="about.html">
+          <a href="/pages/about/">
             <p class="nav-list-ttl">NUOVOのこだわり</p>
             <p class="sub-ttl">ABOUT US</p>
           </a>
         </li>
         <li class="nav-list">
-          <a href="faq.html">
+          <a href="/pages/faq/">
             <p class="nav-list-ttl">よくある質問</p>
             <p class="sub-ttl">FAQ</p>
           </a>
         </li>
         <li class="nav-list">
-          <a href="contact.html">
+          <a href="/pages/contact-form/">
             <p class="nav-list-ttl">お問い合わせ</p>
             <p class="sub-ttl">CONTACT</p>
           </a>
@@ -67,7 +88,7 @@
       </ul>
       <ul class="nav02">
         <li class="nav-list">
-          <a href="item-list.html">
+          <a href="/collections/all/">
             <p class="nav-list-ttl">商品一覧</p>
             <p class="sub-ttl">LINE UP</p>
           </a>
@@ -75,52 +96,52 @@
         <ul class="nav-price">
           <p><img src="https://cdn.shopify.com/s/files/1/0840/1993/7556/files/icon-menu_price.svg" alt="">価格から探す</p>
           <li class="nav-category-list">
-            <a class="nav-list-ttl" href="/collections/0001">1,000円以下</a>
+            <a class="nav-list-ttl" href="/collections/0001/">1,000円以下</a>
           </li>
           <li class="nav-category-list">
-            <a class="nav-list-ttl" href="/collections/1000">1,000～3,000円</a>
+            <a class="nav-list-ttl" href="/collections/1000/">1,000～3,000円</a>
           </li>
           <li class="nav-category-list">
-            <a class="nav-list-ttl" href="/collections/3000">3,000～5,000円</a>
+            <a class="nav-list-ttl" href="/collections/3000/">3,000～5,000円</a>
           </li>
           <li class="nav-category-list">
-            <a class="nav-list-ttl" href="/collections/5000">5,000～10,000円</a>
+            <a class="nav-list-ttl" href="/collections/5000/">5,000～10,000円</a>
           </li>
           <li class="nav-category-list">
-            <a class="nav-list-ttl" href="/collections/10000">10,000円以上</a>
+            <a class="nav-list-ttl" href="/collections/10000/">10,000円以上</a>
           </li>
         </ul>
         <ul class="nav-category">
           <p><img src="https://cdn.shopify.com/s/files/1/0840/1993/7556/files/icon-menu_category.svg" alt="">カテゴリーから探す</p>
           <div>
             <li class="nav-category-list">
-              <a class="nav-list-ttl" href="/collections/all">全て</a>
+              <a class="nav-list-ttl" href="/collections/all/">全て</a>
             </li>
             <li class="nav-category-list">
-              <a class="nav-list-ttl" href="/collections/hormone">ホルモン</a>
+              <a class="nav-list-ttl" href="/collections/hormone/">ホルモン</a>
             </li>
             <li class="nav-category-list">
-              <a class="nav-list-ttl" href="/collections/oumigyu">近江牛</a>
+              <a class="nav-list-ttl" href="/collections/oumigyu/">近江牛</a>
             </li>
             <li class="nav-category-list">
-              <a class="nav-list-ttl" href="/collections/processdmeat">加工肉</a>
+              <a class="nav-list-ttl" href="/collections/rareparts/">希少部位</a>
             </li>
             <li class="nav-category-list">
-              <a class="nav-list-ttl" href="/collections/kurogewagyu">沖縄県産 黒毛和牛</a>
+              <a class="nav-list-ttl" href="/collections/kurogewagyu/">沖縄県産 黒毛和牛</a>
             </li>
             <li class="nav-category-list">
-              <a class="nav-list-ttl" href="/collections/rareparts">希少部位</a>
+              <a class="nav-list-ttl" href="/collections/other/">その他</a>
             </li>
             <li class="nav-category-list">
-              <a class="nav-list-ttl" href="/collections/bbq">BBQセット</a>
+              <a class="nav-list-ttl" href="/collections/set/">セット</a>
             </li>
           </div>
         </ul>
       </ul>
       <ul class="nav03">
-        <li><a href="company.html">会社概要</a></li>
-        <li><a href="privacy.html">個人情報保護方針</a></li>
-        <li><a href="terms.html">特定商取引法に基づく表記</a></li>
+        <li><a href="/pages/company/">会社概要</a></li>
+        <li><a href="/pages/privacy/">個人情報保護方針</a></li>
+        <li><a href="/pages/terms/">特定商取引法に基づく表記</a></li>
       </ul>
     </nav>
     <p class="copyright u-sp"><small>Copyright © 2023 Nuovo</small></p>

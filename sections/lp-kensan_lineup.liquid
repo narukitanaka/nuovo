@@ -1,0 +1,44 @@
+<section class="p-lp_lineup">
+  <div class="inner layer_custom">
+    <div class="title">
+      <h2>商品ラインナップ</h2>
+      <p class="sub-ttl">Line Up</p>
+    </div>
+    <ul>
+      {% for used_product_block in section.blocks %}
+        {% if used_product_block.type == 'used_product_block' %}
+          <li class="fadeIn">
+            <a href="{{ used_product_block.settings.used_product.url }}">
+              <div class="img-box obj-fit">
+                <img src="{{ used_product_block.settings.used_product.featured_image.src | img_url: 'master' }}" alt="">
+              </div>
+              <p class="name">{{ used_product_block.settings.used_product.title }}</p>
+              <p class="price">{{ used_product_block.settings.used_product.price | money }}<span>（税込）</span></p>
+            </a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+</section><!-- /.wrap-lineup -->
+
+
+
+{% schema %}
+  {
+    "name": "LP商品ラインナップ",
+    "blocks": [
+      {
+        "type": "used_product_block",
+        "name": "商品ブロック",
+        "settings": [
+          {
+            "type": "product",
+            "id": "used_product",
+            "label": "商品を選択"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
