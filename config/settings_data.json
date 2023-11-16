@@ -144,6 +144,38 @@
         ],
         "settings": {
         }
+      },
+      "lp-bbq_lineup": {
+        "type": "lp-bbq_lineup",
+        "blocks": {
+          "38a476fc-782b-425f-aa58-c8a6e04a5b3b": {
+            "type": "used_product_block",
+            "settings": {
+              "used_product": "0003"
+            }
+          }
+        },
+        "block_order": [
+          "38a476fc-782b-425f-aa58-c8a6e04a5b3b"
+        ],
+        "settings": {
+        }
+      },
+      "lp-kensan_lineup": {
+        "type": "lp-kensan_lineup",
+        "blocks": {
+          "1b6cba9c-fa62-4321-be9d-c25099cd279d": {
+            "type": "used_product_block",
+            "settings": {
+              "used_product": "0002"
+            }
+          }
+        },
+        "block_order": [
+          "1b6cba9c-fa62-4321-be9d-c25099cd279d"
+        ],
+        "settings": {
+        }
       }
     },
     "content_for_index": [
