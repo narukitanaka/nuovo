@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  font-family: "hippori Mincho B1", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "游明朝", "Yu Mincho", "游明朝体", "YuMincho", "ＭＳ Ｐ明朝", "MS PMincho", serif;
+  font-family: "Shippori Mincho B1", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "游明朝", "Yu Mincho", "游明朝体", "YuMincho", "ＭＳ Ｐ明朝", "MS PMincho", serif;
 }
 
 .img-box img {
@@ -89,6 +89,10 @@ input[type=button]::-webkit-search-decoration {
 input[type=submit]:focus,
 input[type=button]:focus {
   outline-offset: -2px;
+}
+
+.wrap-hidden {
+  overflow-x: hidden;
 }
 
 .fadeIn {
@@ -567,7 +571,7 @@ header {
 }
 @media screen and (max-width: 1100px) {
   .mega-menu .mega-menu_inner {
-    width: 80%;
+    width: 85%;
   }
 }
 @media screen and (max-width: 768px) {
@@ -581,6 +585,11 @@ header {
   display: flex;
   justify-content: space-between;
   gap: 29.2rem;
+}
+@media screen and (max-width: 1100px) {
+  .mega-menu .mega-menu_inner nav {
+    gap: 12rem;
+  }
 }
 @media screen and (max-width: 768px) {
   .mega-menu .mega-menu_inner nav {
@@ -620,7 +629,7 @@ header {
   }
 }
 .mega-menu .mega-menu_inner nav .nav01 {
-  width: 26rem;
+  width: 27rem;
 }
 .mega-menu .mega-menu_inner nav .nav02 .nav-price p, .mega-menu .mega-menu_inner nav .nav02 .nav-category p {
   display: flex;
@@ -1019,6 +1028,16 @@ top
 .p-top_mv {
   width: 100vw;
 }
+@media screen and (max-width: 1100px) {
+  .p-top_mv {
+    position: relative;
+  }
+}
+@media screen and (max-width: 768px) {
+  .p-top_mv {
+    position: static;
+  }
+}
 .p-top_mv img {
   width: 100%;
 }
@@ -1046,6 +1065,9 @@ top
   .p-top_mv .inner .mv-btn {
     width: 34vw;
   }
+}
+.p-top_mv .inner .mv-btn:first-of-type {
+  background-color: rgba(0, 0, 0, 0.5);
 }
 .p-top_mv .inner .mv-btn:first-of-type::before {
   background: url(https://cdn.shopify.com/s/files/1/0840/1993/7556/files/arrow02.svg) no-repeat top/contain;
@@ -1494,6 +1516,7 @@ top
   letter-spacing: 6px;
   color: #DEB462;
   margin-bottom: 1.1rem;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 @media screen and (max-width: 768px) {
   .p-under_mv h1 {
@@ -1504,6 +1527,7 @@ top
 .p-under_mv .sub-ttl {
   letter-spacing: 3px;
   color: #DEB462;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 @media screen and (max-width: 768px) {
   .p-under_mv .sub-ttl {
@@ -1573,6 +1597,7 @@ top
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
             clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
     z-index: 2;
+    padding: 62.4vw 0 55.4666666667vw;
   }
 }
 @media screen and (max-width: 1100px) {
@@ -1969,6 +1994,7 @@ top
   letter-spacing: 4px;
   color: #DEB462;
   margin-bottom: 0.5rem;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .p-item-list_wrap01 {
