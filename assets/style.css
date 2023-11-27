@@ -3051,6 +3051,23 @@ top
   letter-spacing: 4px;
   border-bottom: 1px solid #fff;
   color: #fff;
+  line-height: 1.5;
+}
+.p-terms_wrap01 table tr td table tr:first-of-type th, .p-terms_wrap01 table tr td table tr:first-of-type td {
+  padding-bottom: 0;
+}
+.p-terms_wrap01 table tr td table tr:last-of-type th, .p-terms_wrap01 table tr td table tr:last-of-type td {
+  padding-top: 0;
+}
+.p-terms_wrap01 table tr td table th {
+  border-bottom: none;
+  text-align: left;
+  width: 6.5%;
+  padding: 1rem 0;
+}
+.p-terms_wrap01 table tr td table td {
+  border: none;
+  padding: 1rem 0;
 }
 
 /*************************************************

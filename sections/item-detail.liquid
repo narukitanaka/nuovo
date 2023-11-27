@@ -50,37 +50,37 @@
         {% endif %}
         <table class="p-merchandise__infomation">
           <tr>
-            {% if product.metafields.custom._maker != empty %}
+            {% if product.metafields.custom._capacity != blank %}
               <th>内容量</th>
               <td>{{ product.metafields.custom._capacity }}</td>
             {% endif %}
           </tr>
           <tr>
-            {% if product.metafields.custom._maker != empty %}
+            {% if product.metafields.custom._material != blank %}
               <th>原材料名</th>
               <td>{{ product.metafields.custom._material }}</td>
             {% endif %}
           </tr>
           <tr>
-            {% if product.metafields.custom._maker != empty %}
+            {% if product.metafields.custom._best-before != blank %}
               <th>賞味期限</th>
               <td>{{ product.metafields.custom._best-before }}</td>
             {% endif %}
           </tr>
           <tr>
-            {% if product.metafields.custom._maker != empty %}
+            {% if product.metafields.custom._preservation != blank %}
             <th>保存方法</th>
             <td>{{ product.metafields.custom._preservation }}</td>
             {% endif %}
           </tr>
           <tr>
-            {% if product.metafields.custom._maker != empty %}
+            {% if product.metafields.custom._shipping-method != blank %}
             <th>配送方法</th>
             <td>{{ product.metafields.custom._shipping-method }}</td>
             {% endif %}
           </tr>
           <tr>
-            {% if product.metafields.custom._maker != empty %}
+            {% if product.metafields.custom._delivery-date != blank %}
             <th>お届け日目安</th>
             <td>{{ product.metafields.custom._delivery-date | newline_to_br }}</td>
             {% endif %}
