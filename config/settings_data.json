@@ -1,6 +1,7 @@
 {
   "current": {
     "logo_width": 90,
+    "favicon": "shopify:\/\/shop_images\/Favicon.png",
     "type_header_font": "assistant_n4",
     "heading_scale": 100,
     "type_body_font": "assistant_n4",
@@ -135,7 +136,7 @@
           "43c8eef9-26fc-4508-8405-fdc7dda0f720": {
             "type": "used_product_block",
             "settings": {
-              "used_product": "0001"
+              "used_product": "002"
             }
           }
         },
@@ -151,7 +152,7 @@
           "38a476fc-782b-425f-aa58-c8a6e04a5b3b": {
             "type": "used_product_block",
             "settings": {
-              "used_product": "0003"
+              "used_product": "004"
             }
           }
         },
@@ -167,12 +168,40 @@
           "1b6cba9c-fa62-4321-be9d-c25099cd279d": {
             "type": "used_product_block",
             "settings": {
-              "used_product": "0002"
+              "used_product": "005"
+            }
+          },
+          "18332fdb-f186-43b3-a030-ed6fe4b96159": {
+            "type": "used_product_block",
+            "settings": {
+              "used_product": "007"
+            }
+          },
+          "533595b9-d1a3-473a-8f8f-14c9fe054c41": {
+            "type": "used_product_block",
+            "settings": {
+              "used_product": "006"
+            }
+          },
+          "cbc32e7e-979c-4b2a-b141-4ed925dda46c": {
+            "type": "used_product_block",
+            "settings": {
+              "used_product": "004"
+            }
+          },
+          "a4c9569a-fd57-4f51-835a-f645a62a8f79": {
+            "type": "used_product_block",
+            "settings": {
+              "used_product": "003"
             }
           }
         },
         "block_order": [
-          "1b6cba9c-fa62-4321-be9d-c25099cd279d"
+          "1b6cba9c-fa62-4321-be9d-c25099cd279d",
+          "18332fdb-f186-43b3-a030-ed6fe4b96159",
+          "533595b9-d1a3-473a-8f8f-14c9fe054c41",
+          "cbc32e7e-979c-4b2a-b141-4ed925dda46c",
+          "a4c9569a-fd57-4f51-835a-f645a62a8f79"
         ],
         "settings": {
         }
