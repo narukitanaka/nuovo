@@ -3169,6 +3169,18 @@ top
     width: 72.8vw;
   }
 }
+.p-lp_mv.p-oumigyu .shipping-free p {
+  font-size: 1.6rem;
+  text-align: center;
+  color: #DEB462;
+  margin-top: 1rem;
+}
+@media screen and (max-width: 768px) {
+  .p-lp_mv.p-oumigyu .shipping-free p {
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+  }
+}
 
 .p-lp_wrap01.p-oumigyu {
   background-color: #1C0D07;
@@ -3210,6 +3222,18 @@ top
 @media screen and (max-width: 768px) {
   .p-lp_wrap02.p-oumigyu .shipping-free {
     width: 72.2666666667vw;
+  }
+}
+.p-lp_wrap02.p-oumigyu .shipping-free p {
+  font-size: 1.4rem;
+  text-align: center;
+  color: #3F1E10;
+  margin-top: 1rem;
+}
+@media screen and (max-width: 768px) {
+  .p-lp_wrap02.p-oumigyu .shipping-free p {
+    font-size: 1.3rem;
+    letter-spacing: 1px;
   }
 }
 
